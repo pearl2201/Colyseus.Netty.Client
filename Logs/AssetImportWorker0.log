@@ -1,0 +1,446 @@
+Using pre-set license
+Built from '2020.2/staging' branch; Version is '2020.2.7f1 (c53830e277f1) revision 12924976'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19043.1110; Version 2009; 64bit' Language: 'en' Physical Memory: 16328 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+F:\Installer\Unity\2020.2.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+F:/Kyx/Research/AutoTest/Colyseus
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+23175
+Successfully changed project path to: F:/Kyx/Research/AutoTest/Colyseus
+F:/Kyx/Research/AutoTest/Colyseus
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 51.89 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.7f1 (c53830e277f1)
+[Subsystems] Discovering subsystems at path F:/Installer/Unity/2020.2.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/Kyx/Research/AutoTest/Colyseus/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GT 1030 (ID=0x1d01)
+    Vendor:   
+    VRAM:     1982 MB
+    Driver:   27.21.14.5671
+Initialize mono
+Mono path[0] = 'F:/Installer/Unity/2020.2.7f1/Editor/Data/Managed'
+Mono path[1] = 'F:/Installer/Unity/2020.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'F:/Installer/Unity/2020.2.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56180
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: F:/Installer/Unity/2020.2.7f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: F:/Installer/Unity/2020.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: F:/Installer/Unity/2020.2.7f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.003077 seconds.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 53.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.508 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004757 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 45.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.162 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2324 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.3 MB.
+System memory in use after: 99.4 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2759.
+Total: 2.691400 ms (FindLiveObjects: 0.537500 ms CreateObjectMapping: 0.217300 ms MarkObjects: 1.807700 ms  DeleteObjects: 0.127800 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Netty-Examples/PocoClient.cs
+  artifactKey: Guid(7222d68352bbfd24cab69c02247222d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netty-Examples/PocoClient.cs using Guid(7222d68352bbfd24cab69c02247222d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16d91b7ac99ac5163ce4d0aaf26349bd') in 0.111394 seconds
+  Import took 0.137894 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009784 seconds.
+  path: Assets/Netty-Examples/PocoClientHandler.cs
+  artifactKey: Guid(22c94acb88f2044479ed932ab99d1bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netty-Examples/PocoClientHandler.cs using Guid(22c94acb88f2044479ed932ab99d1bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feb134c261d5c22a74edcbacc9cc89ad') in 0.071928 seconds
+  Import took 0.089648 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Netty-Examples/NettyClient2.cs
+  artifactKey: Guid(d3d79273a26ebc44eb15264a648dc1aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netty-Examples/NettyClient2.cs using Guid(d3d79273a26ebc44eb15264a648dc1aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '605f33bae5c5e4342706d5ddc3b80ec7') in 0.038840 seconds
+  Import took 0.043179 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 145001.169776 seconds.
+  path: Assets/Plugins/Common/PersonEncoder.cs
+  artifactKey: Guid(f95651c43ba595b4eb022b99ad66cd57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Common/PersonEncoder.cs using Guid(f95651c43ba595b4eb022b99ad66cd57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0cc67d258144569fd74b4f45de3026a') in 0.286647 seconds
+  Import took 2.091939 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.278785 seconds.
+  path: Assets/Plugins/Coleseus.Shared.dll
+  artifactKey: Guid(e686c3ab6a7572d448b7011020243b89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Coleseus.Shared.dll using Guid(e686c3ab6a7572d448b7011020243b89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c5958885f4a88a07d1aa509f6a2b3eb') in 0.445216 seconds
+  Import took 0.511591 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.064025 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.32 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.723 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2319 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.3 MB.
+System memory in use after: 99.4 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2763.
+Total: 19.978700 ms (FindLiveObjects: 0.387200 ms CreateObjectMapping: 0.168700 ms MarkObjects: 19.175400 ms  DeleteObjects: 0.245800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1224.685703 seconds.
+  path: Assets/Plugins/Colyseus
+  artifactKey: Guid(9acfa44ae488f6549a0ce620bebfb749) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Colyseus using Guid(9acfa44ae488f6549a0ce620bebfb749) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6b896f8e2eebf3b069504ff56435198') in 0.030466 seconds
+  Import took 0.063511 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.873258 seconds.
+  path: Assets/Plugins/Colyseus/App
+  artifactKey: Guid(1bfbe84bacadb3b42a6a5ccfd3b783e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Colyseus/App using Guid(1bfbe84bacadb3b42a6a5ccfd3b783e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '392c773c95aaf1cdf326ebb37f7dce50') in 0.018907 seconds
+  Import took 0.033548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.188812 seconds.
+  path: Assets/Plugins/Colyseus/Convert
+  artifactKey: Guid(7196af83842eac84a9bee5a68b7b168a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Colyseus/Convert using Guid(7196af83842eac84a9bee5a68b7b168a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60663e40563b65bcb6336c9f84a92ca3') in 0.019174 seconds
+  Import took 0.026682 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.841519 seconds.
+  path: Assets/Plugins/Colyseus/Convert/IConvert.cs
+  artifactKey: Guid(bd63e7391f50ab54ea53bf2330aa7859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Colyseus/Convert/IConvert.cs using Guid(bd63e7391f50ab54ea53bf2330aa7859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3c7499614b8614c2099acc62488a435') in 0.055019 seconds
+  Import took 0.078735 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004236 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.122 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2320 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.4 MB.
+System memory in use after: 99.5 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2768.
+Total: 2.146800 ms (FindLiveObjects: 0.245800 ms CreateObjectMapping: 0.115200 ms MarkObjects: 1.679500 ms  DeleteObjects: 0.104500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 91.872195 seconds.
+  path: Assets/Plugins/Colyseus/Convert/IConvert.cs
+  artifactKey: Guid(bd63e7391f50ab54ea53bf2330aa7859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Colyseus/Convert/IConvert.cs using Guid(bd63e7391f50ab54ea53bf2330aa7859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccf3fad63283673043adf05d6e2c7ac4') in 0.007662 seconds
+  Import took 0.036450 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.253926 seconds.
+  path: Assets/Plugins/Colyseus/App/IGame.cs
+  artifactKey: Guid(7292cb8513765fd439418a6ead5430fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Colyseus/App/IGame.cs using Guid(7292cb8513765fd439418a6ead5430fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e1ba0f5a8dfa8f1567b2e578de49eb7') in 0.031322 seconds
+  Import took 0.070676 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 68.939009 seconds.
+  path: Assets/Plugins/Colyseus/App/IGame.cs
+  artifactKey: Guid(7292cb8513765fd439418a6ead5430fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Colyseus/App/IGame.cs using Guid(7292cb8513765fd439418a6ead5430fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36c778d0401ce3f7879b2bc79c59bcd5') in 0.015694 seconds
+  Import took 0.042461 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021995 seconds.
+  path: Assets/Plugins/Colyseus/App/IGame.cs
+  artifactKey: Guid(7292cb8513765fd439418a6ead5430fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Colyseus/App/IGame.cs using Guid(7292cb8513765fd439418a6ead5430fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36c778d0401ce3f7879b2bc79c59bcd5') in 0.010433 seconds
+  Import took 0.068092 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004726 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.361 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2321 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.5 MB.
+System memory in use after: 99.5 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2773.
+Total: 10.941700 ms (FindLiveObjects: 0.345000 ms CreateObjectMapping: 0.148200 ms MarkObjects: 10.334400 ms  DeleteObjects: 0.112800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 63.774626 seconds.
+  path: Assets/Plugins/Colyseus/App/IGame.cs
+  artifactKey: Guid(7292cb8513765fd439418a6ead5430fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Colyseus/App/IGame.cs using Guid(7292cb8513765fd439418a6ead5430fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee62b0894225a1a21c4a7c9b7bca273a') in 0.010002 seconds
+  Import took 0.032163 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.782531 seconds.
+  path: Assets/Colyseus
+  artifactKey: Guid(049734f3f3142934f98ced71cdca38cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus using Guid(049734f3f3142934f98ced71cdca38cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c54e717da69a51b6db498af074a0cab6') in 0.011609 seconds
+  Import took 0.015840 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001909 seconds.
+  path: Assets/Colyseus
+  artifactKey: Guid(049734f3f3142934f98ced71cdca38cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus using Guid(049734f3f3142934f98ced71cdca38cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c54e717da69a51b6db498af074a0cab6') in 0.009866 seconds
+  Import took 0.016253 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004569 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.685 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2321 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.5 MB.
+System memory in use after: 99.5 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2777.
+Total: 2.977000 ms (FindLiveObjects: 0.469100 ms CreateObjectMapping: 0.166300 ms MarkObjects: 2.229400 ms  DeleteObjects: 0.110200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.699939 seconds.
+  path: Assets/Colyseus/NettyClient
+  artifactKey: Guid(69fd32de2a2ef894fac64eeb44d5e7e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient using Guid(69fd32de2a2ef894fac64eeb44d5e7e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '372bdab36fc9b648cf4e9d87b5ea5559') in 0.063075 seconds
+  Import took 0.068075 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004411 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.391 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2321 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.5 MB.
+System memory in use after: 99.6 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2781.
+Total: 2.392000 ms (FindLiveObjects: 0.297800 ms CreateObjectMapping: 0.118100 ms MarkObjects: 1.855300 ms  DeleteObjects: 0.119000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 476.358058 seconds.
+  path: Assets/Colyseus/NettyClient/NettyTcpClient.cs
+  artifactKey: Guid(f116e1ebc8e51314a86258fd26d4b767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient/NettyTcpClient.cs using Guid(f116e1ebc8e51314a86258fd26d4b767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4918d4f936e4a83775ea77d97dbf695') in 0.048211 seconds
+  Import took 0.231093 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.389779 seconds.
+  path: Assets/Colyseus/NettyClient/NettyUdpClient.cs
+  artifactKey: Guid(305d6e6ab1367484782a33b8b9248100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient/NettyUdpClient.cs using Guid(305d6e6ab1367484782a33b8b9248100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29f3b05eca6cc4aa0f71272d539e88f5') in 0.031578 seconds
+  Import took 0.051999 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.535198 seconds.
+  path: Assets/Colyseus/NettyClient/Utils
+  artifactKey: Guid(47a986df25245904a84b57bedee6f43d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient/Utils using Guid(47a986df25245904a84b57bedee6f43d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ecaabea62c5cbda59b49d1d7507a562') in 0.020498 seconds
+  Import took 0.025971 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.109833 seconds.
+  path: Assets/Colyseus/NettyClient/Utils/Config.cs
+  artifactKey: Guid(261f28ce329b459439656217f1ef3336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient/Utils/Config.cs using Guid(261f28ce329b459439656217f1ef3336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd9e9f715faa81058107332d35b831b6') in 0.026440 seconds
+  Import took 0.050418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.651486 seconds.
+  path: Assets/Colyseus/NettyClient/Utils/Credentials.cs
+  artifactKey: Guid(591841cf3ea568a49be3790b8ce11748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient/Utils/Credentials.cs using Guid(591841cf3ea568a49be3790b8ce11748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '316240c7109ca6228ed12bd711d2810e') in 0.065977 seconds
+  Import took 0.091950 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.152306 seconds.
+  path: Assets/Colyseus/NettyClient/Utils/LoginHelper.cs
+  artifactKey: Guid(b3535fbdfaf69964b9fa6b5fbcdf25d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient/Utils/LoginHelper.cs using Guid(b3535fbdfaf69964b9fa6b5fbcdf25d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa8e3af83e37badb61bd6f6bcab6c145') in 0.223619 seconds
+  Import took 0.259995 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.541123 seconds.
+  path: Assets/Colyseus/NettyClient/Utils/NettyUtils.cs
+  artifactKey: Guid(c5390814fa6aa3c49a386ff15aad01eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient/Utils/NettyUtils.cs using Guid(c5390814fa6aa3c49a386ff15aad01eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9bf823934c155067719935e70a4f67d') in 0.030639 seconds
+  Import took 0.059056 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.120297 seconds.
+  path: Assets/Colyseus/NettyClient/Utils/SimpleCredentials.cs
+  artifactKey: Guid(54c458800d4f97846866fb185fdf6072) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient/Utils/SimpleCredentials.cs using Guid(54c458800d4f97846866fb185fdf6072) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13730dbb9e1d0c92e6960029488bf8ea') in 0.059462 seconds
+  Import took 0.091559 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12762.555399 seconds.
+  path: Assets/Colyseus/NettyClient/Utils/SimpleCredentials.cs
+  artifactKey: Guid(54c458800d4f97846866fb185fdf6072) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient/Utils/SimpleCredentials.cs using Guid(54c458800d4f97846866fb185fdf6072) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40b5cb1d1d83ba719fb202192f03ff48') in 0.074862 seconds
+  Import took 0.332702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34268.732293 seconds.
+  path: Assets/Colyseus/NettyClient/Handlers/Netty
+  artifactKey: Guid(68cffcd7724b5624395a3e6bb02d445d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Colyseus/NettyClient/Handlers/Netty using Guid(68cffcd7724b5624395a3e6bb02d445d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4f0a9b56c255ef7eedac7ef143e6608') in 0.086885 seconds
+  Import took 0.305181 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.060797 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.970 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2367 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 100.7 MB.
+System memory in use after: 100.7 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2831.
+Total: 25.394500 ms (FindLiveObjects: 0.246500 ms CreateObjectMapping: 0.111000 ms MarkObjects: 24.836800 ms  DeleteObjects: 0.198300 ms)
+
