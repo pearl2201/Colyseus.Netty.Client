@@ -169,9 +169,9 @@ namespace Coleseus.Shared.Event.Impl
                 // retrieval is not thread safe, but since we are not setting it to
                 // null
                 // anywhere it should be fine.
-                List<IEventHandler> handlers = handlersByEventType[@event.getType()];
+               
                 // Iteration is thread safe since we use copy on write.
-                if (null != handlers)
+                if (handlersByEventType.TryGetValue(@event.getType(), out var handlers))
                 {
                     foreach (IEventHandler handler in handlers)
                     {

@@ -16,7 +16,7 @@ public class PocoClient : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("StartConnect", 0.5f);
+        //Invoke("StartConnect", 0.5f);
     }
 
     // Update is called once per frame
@@ -25,10 +25,14 @@ public class PocoClient : MonoBehaviour
 
     }
 
-    void StartConnect()
+    public void CallConnect()
+    {
+        StartConnect();
+    }
+    public async Task StartConnect()
     {
         NettyClient client = new NettyClient();
-        client.Run().Wait();
+        await client.Run();
     }
 
 }
@@ -44,7 +48,7 @@ public class NettyClient
         var group = new MultithreadEventLoopGroup();
 
         var serverIP = IPAddress.Parse("127.0.0.1");
-        int serverPort = 8080;
+        int serverPort = 18090;
 
         try
         {

@@ -110,7 +110,7 @@ public class NettyUtils
         String str = null;
         if (null != buffer && buffer.ReadableBytes > 2)
         {
-            int length = buffer.ReadUnsignedShort();
+            int length = buffer.ReadShort();
             str = readString(buffer, length);
         }
         return str;
@@ -132,9 +132,7 @@ public class NettyUtils
 
         try
         {
-            IByteBuffer stringBuffer = buffer.ReadSlice(length);
-            byte[] bytes = stringBuffer.Array;
-            str = Encoding.ASCII.GetString(bytes);
+            str = buffer.ReadString(length, Encoding.ASCII);
         }
         catch (Exception e)
         {
@@ -190,10 +188,9 @@ public class NettyUtils
         IByteBuffer buffer = null;
         try
         {
-            IByteBuffer stringBuffer = null;
-            byte[] bytes = Encoding.ASCII.GetBytes(msg);
-            stringBuffer = Unpooled.CopiedBuffer(bytes);
-            int length = stringBuffer.ReadableBytes;
+            IByteBuffer stringBuffer = Unpooled.Buffer();
+            int length = stringBuffer.WriteString(msg, Encoding
+                .ASCII);
             IByteBuffer lengthBuffer = Unpooled.Buffer(2);
             lengthBuffer.WriteShort(length);
 

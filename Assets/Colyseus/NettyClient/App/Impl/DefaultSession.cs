@@ -233,8 +233,8 @@ namespace Assets.Colyseus.NettyClient.App.Impl
             this.reconnectPolicy = reconnectPolicy;
         }
 
-        bool ISession.isWriteable { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        bool ISession.isUDPEnabled { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        bool ISession.isWriteable { get; set; }
+        bool ISession.isUDPEnabled { get; set; }
 
 
 

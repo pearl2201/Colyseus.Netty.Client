@@ -23,21 +23,19 @@ namespace Coleseus.Shared.Protocols.Impl
         {
 
         }
-  
+
 
 
         public override void applyProtocol(ISession playerSession)
         {
-    
-
             IChannelPipeline pipeline = NettyUtils
-                    .getPipeLineOfConnection(playerSession);
+                  .getPipeLineOfConnection((ISession)playerSession);
             // Upstream handlers or encoders (i.e towards server) are added to
             // pipeline now.
             pipeline.AddLast("lengthDecoder", createLengthBasedFrameDecoder());
             pipeline.AddLast("eventDecoder", eventDecoder);
             pipeline.AddLast("eventHandler", new DefaultToClientHandler(
-                    playerSession));
+                    (ISession)playerSession));
 
             // Downstream handlers - Filter for data which flows from server to
             // client. Note that the last handler added is actually the first
@@ -75,6 +73,7 @@ namespace Coleseus.Shared.Protocols.Impl
         {
             this.eventEncoder = eventEncoder;
         }
+
 
     }
 }

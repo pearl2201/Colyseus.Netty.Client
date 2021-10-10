@@ -23,19 +23,16 @@ namespace Coleseus.Shared.Protocols.Impl
             this.protocolName = "MESSAGE_BUFFER_PROTOCOL";
         }
 
-       
-
         public override void applyProtocol(ISession playerSession)
         {
-          
 
             IChannelPipeline pipeline = NettyUtils
-                    .getPipeLineOfConnection(playerSession);
+                    .getPipeLineOfConnection((ISession)playerSession);
             // Upstream handlers or encoders (i.e towards server) are added to
             // pipeline now.
             pipeline.AddLast("lengthDecoder", createLengthBasedFrameDecoder());
             pipeline.AddLast("messageBufferEventDecoder", messageBufferEventDecoder);
-            pipeline.AddLast("eventHandler", new DefaultToClientHandler(
+            pipeline.AddLast("eventHandler", new DefaultToClientHandler((ISession)
                     playerSession));
 
             // Downstream handlers - Filter for data which flows from server to
@@ -78,6 +75,7 @@ namespace Coleseus.Shared.Protocols.Impl
             this.messageBufferEventEncoder = messageBufferEventEncoder;
         }
 
+     
     }
 
 }

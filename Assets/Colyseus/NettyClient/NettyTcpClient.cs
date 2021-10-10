@@ -124,11 +124,12 @@ public class NettyTcpClient : IDisposable
      *         remote nadron server.
      * @throws InterruptedException
      */
-    public IChannel connect(ChannelInitializer<ISocketChannel> pipelineFactory,
+    public Task<IChannel> connect(ChannelInitializer<ISocketChannel> pipelineFactory,
              IEvent loginEvent)
     {
 
-        return connect(pipelineFactory, loginEvent, TimeSpan.FromSeconds(5)).Result;
+
+        return connect(pipelineFactory, loginEvent, TimeSpan.FromSeconds(5));
     }
 
     /**
@@ -162,17 +163,27 @@ public class NettyTcpClient : IDisposable
         lock (bootstrap)
         {
             bootstrap.Handler(pipelineFactory);
-            future = bootstrap.ConnectAsync(serverAddress).ContinueWith(x =>
+
+
+            future = bootstrap.ConnectAsync(serverAddress);
+
+            Debug.Log("bootstrap connect start");
+
+            future.ContinueWith(x =>
             {
+             
                 if (x.IsCompleted)
                 {
                     var result = x.Result;
-                    result.WriteAndFlushAsync(loginEvent);
+                    result.WriteAndFlushAsync(loginEvent).Wait();
+                    Debug.Log("bootstrap connect complete");
                     return result;
                 }
                 else
                 {
-                    throw new Exception(x.Exception.Message);
+                 
+                    Debug.LogError("bootstrap connect exception: " + x.Exception.Message);
+                    return null;
                 }
 
             });

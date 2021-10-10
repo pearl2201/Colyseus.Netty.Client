@@ -70,7 +70,7 @@ namespace Assets.Colyseus.NettyClient.App.Impl
          * @throws InterruptedException
          * @throws Exception
          */
-        public ISession createAndConnectSession()
+        public Task<ISession> createAndConnectSession()
 
 
         {
@@ -88,11 +88,11 @@ namespace Assets.Colyseus.NettyClient.App.Impl
          * @throws InterruptedException
          * @throws Exception
          */
-        public ISession createAndConnectSession(List<IEventHandler> eventHandlers)
+        public async Task<ISession> createAndConnectSession(List<IEventHandler> eventHandlers)
 
         {
             ISession session = createSession();
-            connectSession(session, eventHandlers);
+            await connectSession(session, eventHandlers);
             return session;
         }
 
@@ -116,10 +116,10 @@ namespace Assets.Colyseus.NettyClient.App.Impl
          * @throws InterruptedException
          * @throws Exception
          */
-        public void connectSession(ISession session)
+        public Task connectSession(ISession session)
 
         {
-            connectSession(session, (List<IEventHandler>)null);
+            return connectSession(session, (List<IEventHandler>)null);
         }
 
         /**
@@ -134,7 +134,7 @@ namespace Assets.Colyseus.NettyClient.App.Impl
          * @throws InterruptedException
          * @throws Exception
          */
-        public void connectSession(ISession session,
+        public async Task connectSession(ISession session,
                 List<IEventHandler> eventHandlers)
         {
             EndPoint udpAddress = null;
@@ -158,7 +158,7 @@ namespace Assets.Colyseus.NettyClient.App.Impl
             MessageBuffer<IByteBuffer> buffer = loginHelper
                     .getLoginBuffer((IPEndPoint)udpAddress);
             IEvent loginEvent = Events.CreateEvent(buffer, Events.LOG_IN);
-            doTcpConnection(session, loginEvent);
+            await doTcpConnection(session, loginEvent);
         }
 
         /**
@@ -176,7 +176,7 @@ namespace Assets.Colyseus.NettyClient.App.Impl
          * @throws InterruptedException
          * @throws Exception
          */
-        public void reconnectSession(ISession session, string reconnectKey)
+        public async Task reconnectSession(ISession session, string reconnectKey)
 
         {
             session.tcpSender.close();
@@ -193,15 +193,15 @@ namespace Assets.Colyseus.NettyClient.App.Impl
                             loginHelper.getReconnectBuffer(reconnectKey, (IPEndPoint)udpAddress),
                             Events.RECONNECT);
 
-            doTcpConnection(session, reconnectEvent);
+            await doTcpConnection(session, reconnectEvent);
         }
 
-        protected void doTcpConnection(ISession session, IEvent @event)
+        protected async Task doTcpConnection(ISession session, IEvent @event)
 
         {
             // This will in turn invoke the startEventHandler when server sends
             // Events.START event.
-            IChannel channel = tcpClient.connect(getTcpPipelineFactory(session), @event);
+            IChannel channel = await tcpClient.connect(getTcpPipelineFactory(session), @event);
             if (null != channel)
             {
                 Reliable tcpMessageSender = new NettyTCPMessageSender(channel);
