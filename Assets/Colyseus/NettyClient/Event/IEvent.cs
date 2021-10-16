@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Coleseus.Shared.Communication;
+using DotNetty.Buffers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,5 +19,10 @@ namespace Coleseus.Shared.Event
 		DateTime getTimeStamp();
 
 		void setTimeStamp(DateTime timeStamp);
+
+		MessageBuffer<IByteBuffer> getSourceBuffer();
+
+
+		IByteBuffer getBufferData();
 	}
 }

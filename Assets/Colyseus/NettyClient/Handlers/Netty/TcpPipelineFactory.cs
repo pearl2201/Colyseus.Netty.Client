@@ -18,7 +18,7 @@ namespace Assets.Colyseus.NettyClient.Handlers.Netty
 	 * nadron server.
 	 */
         private LengthFieldPrepender LENGTH_FIELD_PREPENDER = new LengthFieldPrepender(
-            2);
+            2,false);
         /**
 		 * Decodes incoming messages from remote nadron server to {@link MessageBuffer}
 		 * type, puts this as the payload for an {@link Event} and passes this

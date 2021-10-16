@@ -1,8 +1,9 @@
 ﻿using Coleseus.Shared.Communication;
+using DotNetty.Buffers;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using Assets.Colyseus.NettyClient.Utils;
 namespace Coleseus.Shared.Event.Impl
 {
 
@@ -85,5 +86,49 @@ namespace Coleseus.Shared.Event.Impl
                     "Event type of this class is already set to NETWORK_MESSAGE. "
                             + "It should not be reset.");
         }
+
+        public static ushort NetworkPackageId => 0;
+
+        public override IByteBuffer getBufferData()
+        {
+            MessageBuffer<IByteBuffer> msgBuffer = getSourceBuffer();
+            IByteBuffer data = msgBuffer.getNativeBuffer();
+            IByteBuffer opcode = Unpooled.Buffer();
+            opcode.WriteUnsignedShort(NetworkPackageId);
+            var msg = Unpooled.WrappedBuffer(opcode, data);
+            return msg;
+
+        }
+    }
+
+    public class EntireStateEvent : DefaultNetworkEvent
+    {
+        public EntireStateEvent() : base()
+        {
+
+        }
+
+        public EntireStateEvent(IEvent @event, DeliveryGuaranty deliveryGuaranty)
+
+        {
+
+        }
+
+        /**
+         * Copy constructor which will take values from the event and set it on this
+         * instance. It will disregard the type of the event and set it to
+         * {@link Events#NETWORK_MESSAGE}. {@link DeliveryGuarantyOptions} is set to
+         * RELIABLE.
+         * 
+         * @param event
+         *            The instance from which payload, create time etc will be
+         *            copied
+         */
+        public EntireStateEvent(IEvent @event) : this(@event, DeliveryGuaranty.RELIABLE)
+        {
+
+        }
+
+        public static new ushort NetworkPackageId => 1;
     }
 }

@@ -6,16 +6,25 @@ using DotNetty.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Assets.ZombieGame.LoginTest;
 
 public class GamePlay : MonoBehaviour
 {
-    private IAM IAM;
+    public IAM IAM;
     private ISession session;
+    private GamePlaySessionHandler hander;
+    [SerializeField] bool _connected;
+    public bool Connected { get => _connected; set { _connected = value; } }
 
     public void SetupGamePlay(IAM iam, ISession session)
     {
         IAM = iam;
         this.session = session;
+    }
+
+    public void SetupHandler(GamePlaySessionHandler hander)
+    {
+        this.hander = hander;
     }
     // Start is called before the first frame update
     void Start()
@@ -26,6 +35,7 @@ public class GamePlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         int type = (int)IAM;
         int operation = 0;
         switch (IAM)
@@ -43,8 +53,10 @@ public class GamePlay : MonoBehaviour
             MessageBuffer<IByteBuffer> messageBuffer = new NettyMessageBuffer();
             messageBuffer.writeInt(type);
             messageBuffer.writeInt(operation);
-            IEvent @event = Events.NetworkEvent(messageBuffer, DeliveryGuaranty.FAST);
-            session.onEvent(@event);
+            INetworkEvent @event = Events.NetworkEvent(messageBuffer, DeliveryGuaranty.RELIABLE);
+            //session.onEvent(@event);
+            this.hander.onNetworkMessage(@event);
+            //session.tcpSender.sendMessage(@event);
         }
     }
 }

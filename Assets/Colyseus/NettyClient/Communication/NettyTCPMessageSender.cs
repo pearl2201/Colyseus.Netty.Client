@@ -1,6 +1,7 @@
 ﻿using Coleseus.Shared.Event;
 using DotNetty.Transport.Channels;
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Coleseus.Shared.Communication
@@ -53,11 +54,11 @@ namespace Coleseus.Shared.Communication
                 IEvent @event = Events.CreateEvent(null, Events.DISCONNECT);
                 if (_channel.Active)
                 {
-                    _channel.WriteAsync(@event).Wait();
+                     _channel.WriteAndFlushAsync(@event).Wait();
                 }
                 else
                 {
-                    _channel.CloseAsync().Wait();
+                     _channel.CloseAsync();
                     Debug.Log($"Unable to write the Event {@event} with type {@event.GetType()} to socket");
 
                 }

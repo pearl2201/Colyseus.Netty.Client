@@ -113,7 +113,7 @@ namespace Coleseus.Shared.Event.Impl
         {
         }
 
-        public void onGameRoomJoin(IEvent @event)
+        public virtual void onGameRoomJoin(IEvent @event)
         {
             if (null != @event.getSource()
                     && (@event.getSource() is MessageBuffer<IByteBuffer>))
@@ -134,7 +134,7 @@ namespace Coleseus.Shared.Event.Impl
         public void onStart(IEvent @event)
         {
             isReconnecting = false;
-            getSession().isWriteable = false;
+            getSession().isWriteable = true;
         }
 
         public void onStop(IEvent @event)

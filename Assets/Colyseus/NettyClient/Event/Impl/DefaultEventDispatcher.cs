@@ -83,7 +83,7 @@ namespace Coleseus.Shared.Event.Impl
                         // Remove the reference if there are no listeners left.
                         if (handlers.Count == 0)
                         {
-                            handlersByEventType.Add(eventType, null);
+                            handlersByEventType.Remove(eventType);
                         }
                     }
                 }
@@ -173,7 +173,7 @@ namespace Coleseus.Shared.Event.Impl
                 // Iteration is thread safe since we use copy on write.
                 if (handlersByEventType.TryGetValue(@event.getType(), out var handlers))
                 {
-                    foreach (IEventHandler handler in handlers)
+                    foreach (IEventHandler handler in handlers.ToArray())
                     {
                         handler.onEvent(@event);
                     }

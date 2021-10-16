@@ -9,6 +9,12 @@ using System.Text;
 
 namespace Coleseus.Shared.Handlers.Netty
 {
+    public interface IDataBufferSchema
+    {
+        MessageBuffer<IByteBuffer> ToMessageBuffer();
+
+    }
+
     public class MessageBufferEventEncoder : MessageToMessageEncoder<IEvent>
     {
         protected override void Encode(IChannelHandlerContext ctx, IEvent @event,
@@ -43,10 +49,16 @@ namespace Coleseus.Shared.Handlers.Netty
             if (null != @event.getSource())
 
             {
-
-
-                MessageBuffer<IByteBuffer> msgBuffer = (MessageBuffer<IByteBuffer>)@event
-                        .getSource();
+                var source = @event.getSource();
+                MessageBuffer<IByteBuffer> msgBuffer = null;
+                if (source is IDataBufferSchema dataSchema)
+                {
+                    msgBuffer = dataSchema.ToMessageBuffer();
+                }
+                else
+                {
+                    msgBuffer = (MessageBuffer<IByteBuffer>)source;
+                }
                 IByteBuffer data = msgBuffer.getNativeBuffer();
                 @out.WriteBytes(data);
                 data.Release();
