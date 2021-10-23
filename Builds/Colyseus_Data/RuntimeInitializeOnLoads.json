@@ -1,1 +1,1 @@
-{"root":[{"assemblyName":"Assembly-CSharp-firstpass","nameSpace":"","className":"MainThreadUtil","methodName":"Setup","loadTypes":1,"isUnityClass":false}]}
+{"root":[{"assemblyName":"Assembly-CSharp","nameSpace":"","className":"MainThreadUtil","methodName":"Setup","loadTypes":1,"isUnityClass":false},{"assemblyName":"UniTask","nameSpace":"Cysharp.Threading.Tasks","className":"PlayerLoopHelper","methodName":"Init","loadTypes":1,"isUnityClass":false}]}
