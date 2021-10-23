@@ -87,14 +87,15 @@ namespace Coleseus.Shared.Event.Impl
                             + "It should not be reset.");
         }
 
-        public static ushort NetworkPackageId => 0;
+        public virtual ushort NetworkPackageId => 0;
 
         public override IByteBuffer getBufferData()
         {
             MessageBuffer<IByteBuffer> msgBuffer = getSourceBuffer();
             IByteBuffer data = msgBuffer.getNativeBuffer();
             IByteBuffer opcode = Unpooled.Buffer();
-            opcode.WriteUnsignedShort(NetworkPackageId);
+            var sourceId = NetworkPackageId;
+            opcode.WriteUnsignedShort(sourceId);
             var msg = Unpooled.WrappedBuffer(opcode, data);
             return msg;
 
@@ -108,7 +109,7 @@ namespace Coleseus.Shared.Event.Impl
 
         }
 
-        public EntireStateEvent(IEvent @event, DeliveryGuaranty deliveryGuaranty)
+        public EntireStateEvent(IEvent @event, DeliveryGuaranty deliveryGuaranty) : base(@event, deliveryGuaranty)
 
         {
 
@@ -129,6 +130,6 @@ namespace Coleseus.Shared.Event.Impl
 
         }
 
-        public static new ushort NetworkPackageId => 1;
+        public override ushort NetworkPackageId => 1;
     }
 }

@@ -49,17 +49,7 @@ namespace Coleseus.Shared.Handlers.Netty
             if (null != @event.getSource())
 
             {
-                var source = @event.getSource();
-                MessageBuffer<IByteBuffer> msgBuffer = null;
-                if (source is IDataBufferSchema dataSchema)
-                {
-                    msgBuffer = dataSchema.ToMessageBuffer();
-                }
-                else
-                {
-                    msgBuffer = (MessageBuffer<IByteBuffer>)source;
-                }
-                IByteBuffer data = msgBuffer.getNativeBuffer();
+                IByteBuffer data = @event.getBufferData();
                 @out.WriteBytes(data);
                 data.Release();
             }

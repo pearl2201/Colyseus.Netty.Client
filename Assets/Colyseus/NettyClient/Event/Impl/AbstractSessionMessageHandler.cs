@@ -21,6 +21,8 @@ namespace Coleseus.Shared.Event.Impl
 
         protected ISession session;
 
+        public string PlayerId { get; private set; }
+
         protected volatile bool isReconnecting = false;
 
         public AbstractSessionEventHandler()
@@ -39,7 +41,7 @@ namespace Coleseus.Shared.Event.Impl
         }
 
 
-        public void onEvent(IEvent @event)
+        public virtual void onEvent(IEvent @event)
         {
             doEventHandlerMethodLookup(@event);
         }
@@ -122,8 +124,12 @@ namespace Coleseus.Shared.Event.Impl
 
                 String reconnectKey = ((MessageBuffer<IByteBuffer>)@event
                         .getSource()).readString();
+                String playerId = ((MessageBuffer<IByteBuffer>)@event
+                    .getSource()).readString();
                 if (null != reconnectKey)
                     getSession().setAttribute(Config.RECONNECT_KEY, reconnectKey);
+                if (null != playerId)
+                    getSession().PlayerId = playerId;
             }
         }
 

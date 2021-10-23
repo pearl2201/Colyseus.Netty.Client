@@ -5,4 +5,5 @@ using UnityEngine;
 public class Config
 {
 	public const string RECONNECT_KEY = "RECONNECT_KEY";
+	public const string PLAYERID = "PLAYERID";
 }

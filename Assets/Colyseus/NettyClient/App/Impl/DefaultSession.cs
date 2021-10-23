@@ -235,9 +235,7 @@ namespace Assets.Colyseus.NettyClient.App.Impl
 
         bool ISession.isWriteable { get; set; }
         bool ISession.isUDPEnabled { get; set; }
-
-
-
+        public string PlayerId { get; set; }
     }
 
     /**

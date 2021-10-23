@@ -133,6 +133,20 @@ namespace Coleseus.Shared.Event
             return networkEvent;
         }
 
+        public static INetworkEvent EntireStateEvent(Object source)
+        {
+            return EntireStateEvent(source, DeliveryGuaranty.RELIABLE);
+        }
+
+        public static INetworkEvent EntireStateEvent(Object source, DeliveryGuaranty deliveryGuaranty)
+        {
+            IEvent @event = CreateEvent(source, Events.NETWORK_MESSAGE);
+            INetworkEvent networkEvent = new EntireStateEvent(@event);
+            networkEvent.setDeliveryGuaranty(deliveryGuaranty);
+            return networkEvent;
+        }
+
+
         public static IEvent dataInEvent(Object source)
         {
             return CreateEvent(source, Events.SESSION_MESSAGE);

@@ -75,7 +75,7 @@ namespace Assets.ZombieGame
                 Debug.Log("On Data In");
                 NettyMessageBuffer buffer = (NettyMessageBuffer)@event.getSource();
                 var sourceId = buffer.readUnsignedShort();
-                if (sourceId == DefaultNetworkEvent.NetworkPackageId)
+                if (sourceId == 0)
                 {
                     Debug.Log("Remaining Human Population: " + buffer.readInt());
                 }

@@ -13,6 +13,7 @@ namespace Assets.Colyseus.NettyClient.App
 {
     public interface ISession
     {
+        string PlayerId {get;set;}
         Object getId();
 
         void setId(Object id);

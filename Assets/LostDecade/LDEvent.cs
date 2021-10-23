@@ -1,4 +1,9 @@
-﻿using Coleseus.Shared.Event.Impl;
+﻿using Coleseus.Shared.Communication;
+using Coleseus.Shared.Event;
+using Coleseus.Shared.Event.Impl;
+using Coleseus.Shared.Handlers.Netty;
+using DotNetty.Buffers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,19 +12,64 @@ using System.Threading.Tasks;
 
 namespace Colyseus.NettyServer.LostDecade
 {
-    public class LDEvent : DefaultEvent
+    public class LDEvent : DefaultNetworkEvent
     {
-        private new LDGameState source;
+      
 
+        private ushort opCode;
 
-        public override object getSource()
+        public LDEvent(ushort opCode) : base()
         {
-            return source;
+            this.opCode = opCode;
         }
 
-        public void setSource(LDGameState source)
+        public LDEvent(ushort opCode, IEvent @event, DeliveryGuaranty deliveryGuaranty) : base(@event, deliveryGuaranty)
+
         {
-            this.source = source;
+            this.opCode = opCode;
+        }
+
+        /**
+         * Copy constructor which will take values from the event and set it on this
+         * instance. It will disregard the type of the event and set it to
+         * {@link Events#NETWORK_MESSAGE}. {@link DeliveryGuarantyOptions} is set to
+         * RELIABLE.
+         * 
+         * @param event
+         *            The instance from which payload, create time etc will be
+         *            copied
+         */
+        public LDEvent(ushort opCode, IEvent @event) : this(opCode, @event, DeliveryGuaranty.RELIABLE)
+        {
+            this.opCode = opCode;
+        }
+
+
+
+
+        public override ushort NetworkPackageId => opCode;
+    }
+
+    public class LDUpdateHeroPositionEvent : IDataBufferSchema
+    {
+
+        public float X { get; set; }
+        public float Y { get; set; }
+
+        public MessageBuffer<IByteBuffer> ToMessageBuffer()
+        {
+            var info = JsonConvert.SerializeObject(this);
+            MessageBuffer<IByteBuffer> messageBuffer = new NettyMessageBuffer();
+            messageBuffer.writeString(info);
+
+            return messageBuffer;
+        }
+
+        public static LDUpdateHeroPositionEvent FromMessageBuffer(MessageBuffer<IByteBuffer> messageBuffer)
+        {
+            var info = messageBuffer.readString();
+            var state = JsonConvert.DeserializeObject<LDUpdateHeroPositionEvent>(info);
+            return state;
         }
     }
 }
